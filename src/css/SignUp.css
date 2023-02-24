@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #23242a;
+}
+.form_container {
+  /* position: relative; */
+  width: 440px;
+  height: 500px;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  color: #45f3ff;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.inputbox,
+.inputarea {
+  position: relative;
+  width: 360px;
+  margin-top: 30px;
+}
+.inputbox input,
+.inputarea textarea {
+  /* position: relative; */
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border: none;
+  outline: none;
+  /* color: #23242a; */
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 0.08em;
+}
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 14px;
+  color: #8f8f8f;
+  font-size: 1em;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.inputarea span {
+  position: absolute;
+  left: 0;
+  padding: 14px;
+  bottom: 0px;
+  color: #8f8f8f;
+  font-size: 1em;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+/* .inputbox input:valid ~ span, .inputbox input:focus ~ span{ */
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+  color: #45f3ff;
+  transform: translateY(-30px);
+  font-size: 0.8rem;
+}
+.inputarea textarea:focus ~ span {
+  color: #45f3ff;
+  transform: translateX(-10px) translateY(-80px);
+  font-size: 0.8rem;
+}
+.inputbox hr,
+.inputarea hr {
+  background-color: #45f3ff;
+  height: 2px;
+  border: none;
+  pointer-events: none;
+}
+
+.progressbar div {
+  background-color: #45f3ff;
+  height: 10px;
+  margin-bottom: 50px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  margin-top: 40px;
+}
+.footer button {
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #45f3ff;
+  font-size: 1rem;
+  font-weight: 500;
+}
