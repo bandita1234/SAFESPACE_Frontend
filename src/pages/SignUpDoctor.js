@@ -25,7 +25,7 @@ const SignUpDoctor = () => {
 
   const FormTitles = [
     "SignUp",
-    "Personal Info",
+    "Job Info",
     "Personal Info",
     "Contact Info",
   ];
@@ -44,6 +44,12 @@ const SignUpDoctor = () => {
     }
   };
   return (
+    <div style={{display:'flex',
+      justifyContent:'center',
+      alignItems: 'center',
+      minHeight: '100vh',
+      backgroundColor: '#23242a'}} >
+
     <div className="form">
       <div className="progressbar">
       <div style={{ width: page===0 ?'25%' : page===1 ?'50%' : page===2 ?'75%':'100%' }}></div>
@@ -52,7 +58,7 @@ const SignUpDoctor = () => {
         <div className="header">{FormTitles[page]}</div>
         <div className="body">{displayContents()}</div>
         <div className="footer">
-          <button
+          <button className="btn"
             disabled={page === 0}
             onClick={() => {
               setPage((currPage) => currPage - 1);
@@ -60,7 +66,7 @@ const SignUpDoctor = () => {
           >
             Prev
           </button>
-          <button
+          <button className="btn"
             // disabled={page === FormTitles.length - 1}
             onClick={() => {
               if(page === FormTitles.length - 1){
@@ -74,6 +80,7 @@ const SignUpDoctor = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

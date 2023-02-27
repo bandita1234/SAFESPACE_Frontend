@@ -1,0 +1,57 @@
+.main_profile {
+  color: white;
+}
+h2 {
+  color: #45f3ff;
+  letter-spacing: 1px;
+}
+.profile_details {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  border-bottom: 2px solid grey;
+}
+.l_profile {
+  max-width: 500px;
+}
+.img_div img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.name_title {
+  width: 100%;
+  height: 60px;
+  background-color: #45f3ff;
+  margin-top: 0px;
+  text-align: center;
+  color: black;
+  letter-spacing: 0.1rem;
+  border-radius: 8px;
+}
+.bio {
+  margin: 30px 0px;
+  text-align: center;
+}
+.details_div {
+  margin-top: 14px;
+}
+.title {
+  letter-spacing: 0.1rem;
+  font-size: larger;
+}
+.qualification {
+  margin: 14px auto;
+}
+.experince {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.contact h2 {
+  margin: 14px auto 8px;
+}
+.posts_details {
+  text-align: center;
+}

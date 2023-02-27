@@ -8,7 +8,7 @@ const Registration = ({formData,setFormData}) => {
         <input type="text" name="name" id="" required autoComplete="off"
         // value={FormData.name} onChange={(e)=>setFormData({...formData , name:e.target.value})} 
         />
-        <span>Username</span>
+        <span>Name</span>
         <hr />
       </div>
       <div className="inputbox">

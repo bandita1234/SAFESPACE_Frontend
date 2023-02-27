@@ -1,18 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #23242a;
-}
 .form_container {
   /* position: relative; */
   width: 440px;
@@ -103,11 +88,50 @@ body {
   gap: 8rem;
   margin-top: 40px;
 }
-.footer button {
+.btn {
   width: 100px;
   height: 30px;
   border-radius: 8px;
   background-color: #45f3ff;
   font-size: 1rem;
   font-weight: 500;
+}
+
+/* User Signup */
+
+.signup_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.signup_container {
+  width: 440px;
+  height: 500px;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  padding: 50px 40px;
+}
+.signup_btn {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #45f3ff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.btn_div {
+  margin-top: 30px;
+}
+.u_signupFooter {
+  margin-top: 14px;
+  text-align: center;
+}
+.u_signupFooter a{
+  text-decoration: none;
+  color: #fff;
+}
+.u_signupFooter a:hover{
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
