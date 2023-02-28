@@ -1,4 +1,5 @@
 import React from 'react'
+import "../css/SignUp.css";
 
 const Login = () => {
   return (
@@ -25,6 +26,9 @@ const Login = () => {
         <button style={{marginTop:'30px'}} className="signup_btn" type="submit">
           Submit
         </button>
+        </div>
+        <div className='u_signupFooter'>
+        <p>Not registered yet ? <a href="/usersignup/">Register here!</a></p>
         </div>
       </div>
     </div>

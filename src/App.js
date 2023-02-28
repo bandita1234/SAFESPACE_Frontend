@@ -5,6 +5,8 @@ import SignUpUser from "./pages/SignUpUser";
 import Login from "./pages/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DocProfile from "./pages/DocProfile";
+import UserProfile from "./pages/UserProfile"
+
 function App() {
   return (
     <div className="App">
@@ -14,6 +16,7 @@ function App() {
           <Route path="docsignup/" element={<SignUpDoctor />} />
           <Route path="login/" element={<Login />} />
           <Route path="docProfile/" element={<DocProfile />} />
+          <Route path="userProfile/" element={<UserProfile />} />
         </Routes>
       </BrowserRouter>
     </div>
