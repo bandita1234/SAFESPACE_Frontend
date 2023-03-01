@@ -11,7 +11,8 @@ const Login = () => {
   });
 
   useEffect(() => {
-    if (localStorage.getItem("token") !== "") {
+    if (localStorage.getItem("token")) {
+      console.log(localStorage.getItem("token"));
       navigate("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

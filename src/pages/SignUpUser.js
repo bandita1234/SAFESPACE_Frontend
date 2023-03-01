@@ -15,7 +15,7 @@ const SignUpUser = () => {
   // const randomUser = Math.floor(100000 + Math.random() * 900000);
 
   useEffect(() => {
-    if (localStorage.getItem("token") !== "") {
+    if (localStorage.getItem("token")) {
       navigate("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

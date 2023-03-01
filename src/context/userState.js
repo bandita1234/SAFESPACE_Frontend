@@ -1,62 +1,36 @@
-// import { createContext } from "react";
-// import React, { useState } from "react";
+import { createContext } from "react";
+import React, { useState } from "react";
 
-// export const UserContext = createContext();
+export const UserContext = createContext();
 
-// const UserState = (props) => {
-//   const [user, setUser] = useState({});
-//   const [isLoggedIn, setIsLoggedIn] = useState(false);
+const UserState = (props) => {
+  const [user, setUser] = useState({});
 
-//   const fetchUser = async () => {
-//     const response = await fetch(`${process.env.HOST}getuser`, {
-//       method: "GET",
-//       headers: {
-//         Cookie: document.cookie,
-//       },
-//     });
-//     let json = await response.json();
+  const fetchUser = async () => {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/user`, {
+      method: "GET",
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    });
+    let json = await response.json();
 
-//     if (response.status === 200) {
-//       if (json.pincode) {
-//         const pins = await fetch(
-//           `https://api.postalpincode.in/pincode/${json.pincode.trim()}`
-//         );
-//         const pinsJson = await pins.json();
-//         if (pinsJson[0].Status == "Success") {
-//           json = {
-//             ...json,
-//             city: pinsJson[0].PostOffice[0].District,
-//             state: pinsJson[0].PostOffice[0].State,
-//           };
-//         }
-//       }
-//       setIsLoggedIn(true);
-//       setUser(json);
-//     } else {
-//       setIsLoggedIn(false);
-//     }
-//   };
+    if (response.status === 200) {
+      setUser(json);
+    } else {
+      setUser({});
+    }
+  };
 
-//   const logout = async () => {
-//     const response = await fetch(`${process.env.HOST}logout`, {
-//       method: "GET",
-//     });
-//     const json = await response.json();
+  const logout = async () => {
+    localStorage.removeItem("token");
+  };
 
-//     if (response.status === 200) {
-//       setIsLoggedIn(false);
-//       setUser({});
-//       router.push("/");
-//     }
-//   };
+  return (
+    <UserContext.Provider value={{ user, fetchUser, logout }}>
+      {props.children}
+    </UserContext.Provider>
+  );
+};
 
-//   return (
-//     <UserContext.Provider
-//       value={{ user, isLoggedIn, setIsLoggedIn, fetchUser, logout }}
-//     >
-//       {props.children}
-//     </UserContext.Provider>
-//   );
-// };
-
-// export default UserState;
+export default UserState;
