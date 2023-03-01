@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import "../css/SignUp.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -94,6 +95,9 @@ const Login = () => {
           >
             Submit
           </button>
+        </div>
+        <div className='u_signupFooter'>
+        <p>Not registered yet ? <a href="/usersignup/">Register here!</a></p>
         </div>
       </div>
     </div>

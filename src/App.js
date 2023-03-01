@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Main from "./pages/Main";
 import UserState from "./context/userState";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="docsignup/" element={<SignUpDoctor />} />
             <Route path="user/login/" element={<Login />} />
             <Route path="docProfile/" element={<DocProfile />} />
+            <Route path="userProfile/" element={<UserProfile />} />
             <Route path="chat/" element={<Chat />} />
           </Routes>
         </BrowserRouter>

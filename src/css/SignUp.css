@@ -104,6 +104,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  color: #fff;
 }
 .signup_container {
   width: 440px;
