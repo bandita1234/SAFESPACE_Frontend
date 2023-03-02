@@ -11,8 +11,8 @@ const SignUpUser = () => {
     cpassword: "",
   });
 
-  // const user = "Anonymous_";
-  // const randomUser = Math.floor(100000 + Math.random() * 900000);
+  const user = "Anonymous_";
+  const randomUser = Math.floor(100000 + Math.random() * 900000);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -73,9 +73,9 @@ const SignUpUser = () => {
             name="username"
             onChange={(e) => handleChange(e)}
             autoComplete="off"
-            // onClick={() => {
-            //   setUsername(`${user}${randomUser}`);
-            // }}
+            onClick={() => {
+              setForm({ ...form, username: `${user}${randomUser}` });
+            }}
             value={form.username}
           />
           <span>Username</span>

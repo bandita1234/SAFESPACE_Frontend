@@ -14,7 +14,6 @@ const UserState = (props) => {
       },
     });
     let json = await response.json();
-
     if (response.status === 200) {
       setUser(json);
     } else {
