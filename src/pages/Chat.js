@@ -12,6 +12,7 @@ const Chat = () => {
   const [currConv, setcurrConv] = useState("");
   const [msg, setMsg] = useState([]);
   const [textMsg, setTextMsg] = useState("");
+  const [search, setSearch] = useState("");
 
   const fetchConv = async () => {
     const response = await fetch(`${process.env.REACT_APP_HOST}/chat/find/`, {
@@ -60,14 +61,47 @@ const Chat = () => {
         text: textMsg,
       }),
     });
+    setTextMsg("");
     let json = await response.json();
-    console.log(json);
+    // console.log(json);
     // if (response.status === 200) {
     //   setMsg(json);
     // } else {
     //   setMsg([]);
     // }
     fetchMsg(currConv);
+  };
+
+  const handleSearch = async (e) => {
+    setSearch(e.target.value);
+    const response = await fetch(
+      `${process.env.REACT_APP_HOST}/user/username/${e.target.value}`,
+      {
+        method: "GET",
+        headers: {
+          token: localStorage.getItem("token"),
+        },
+      }
+    );
+    let json = await response.json();
+    if (response.status === 200 && json && json._id) {
+      // console.log(userCtx, json._id);
+      const conv = await fetch(`${process.env.REACT_APP_HOST}/chat`, {
+        method: "POST",
+        headers: {
+          token: localStorage.getItem("token"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          senderId: userCtx.user._id,
+          receiverId: json._id,
+        }),
+      });
+      let data = await conv.json();
+      if (conv.status === 200) {
+        fetchConv();
+      }
+    }
   };
 
   useEffect(() => {
@@ -81,7 +115,12 @@ const Chat = () => {
     <div className="messenger">
       <div className="chatMenu">
         <div className="chatMenuWrapper">
-          <input placeholder="Search for friends" className="chatMenuInput" />
+          <input
+            placeholder="Search for friends"
+            className="chatMenuInput"
+            value={search}
+            onChange={(e) => handleSearch(e)}
+          />
           {conversation.map((conv) => (
             <div
               key={conv._id}
@@ -103,6 +142,7 @@ const Chat = () => {
                 <Message
                   key={m._id}
                   message={m.text}
+                  time={m.createdAt}
                   own={m.sender == userCtx._id}
                 />
               ))}
