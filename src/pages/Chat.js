@@ -57,7 +57,7 @@ const Chat = () => {
       },
       body: JSON.stringify({
         conversationId: currConv,
-        sender: userCtx._id,
+        sender: userCtx.user._id,
         text: textMsg,
       }),
     });
@@ -143,7 +143,7 @@ const Chat = () => {
                   key={m._id}
                   message={m.text}
                   time={m.createdAt}
-                  own={m.sender == userCtx._id}
+                  own={m.sender === userCtx.user._id}
                 />
               ))}
           </div>
