@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "../css/docProfile.css";
+import { UserContext } from "../context/userState";
 
 const DocProfile = () => {
+  const userCtx = useContext(UserContext);
+  useEffect(() => {
+    if (localStorage.getItem("token")) userCtx.fetchUser();
+    else if (localStorage.getItem("doctoken")) userCtx.fetchDoc();
+  }, []);
+  console.log(userCtx.doc);
   return (
     <div className="main_profile">
       <div className="profile_details">
@@ -13,46 +20,40 @@ const DocProfile = () => {
             />
           </div>
           <div className="name_title">
-            <h3>Dr. Karen Dawson</h3>
-            <p>Psychologist</p>
+            <h3>{userCtx.doc.name}</h3>
+            <p>{userCtx.doc.jobtitle}</p>
           </div>
           <div className="bio">
             <h2>BIOGRAPHY</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente
-              recusandae hic debitis dolores veritatis? Id sit accusantium
-              expedita modi commodi.
-            </p>
+            <p>{userCtx.doc.biography}</p>
           </div>
         </div>
         <div className="r_profile">
           <div className="details_div">
             <h2>PROFILE</h2>
             <div className="title">
-              <h3>Dr. Karen Dawson</h3>
-              <p>Psychologist</p>
+              <h3>{userCtx.doc.name}</h3>
+              <p>{userCtx.doc.jobtitle}</p>
             </div>
             <div className="qualification">
-              <p>M.S,M.Ch (pSYCHOLOGY)</p>
-              <p>Medic General Medical Hospital,Texas,USA</p>
+              <p>{userCtx.doc.qualification}</p>
+              <p>{userCtx.doc.hospital}</p>
             </div>
           </div>
           <div className="experince">
             <h2>EXPERIENCE</h2>
-            <p>22 Years+</p>
+            <p>{userCtx.doc.experience} years</p>
           </div>
           <div className="contact">
             <h2>CONTACT</h2>
-            <p>Ph- 1234567789</p>
-            <p>Email- abc@gmail.com</p>
-            <p style={{marginTop:'10px'}}>
-              Adress- Lorem, ipsum dolor sit amet consectetur adipisicing elit.{" "}
-            </p>
+            <p>Ph- {userCtx.doc.mobno}</p>
+            <p>Email- {userCtx.doc.email}</p>
+            <p style={{ marginTop: "10px" }}>Adress- {userCtx.doc.address}</p>
           </div>
         </div>
       </div>
       <div className="posts_details">
-      <h2>POSTS</h2>
+        <h2>POSTS</h2>
       </div>
     </div>
   );

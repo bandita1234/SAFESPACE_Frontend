@@ -109,7 +109,7 @@ const SignUpUser = () => {
         </div>
         <div className="u_signupFooter">
           <p style={{ color: "#fff" }}>
-            Are you a doctor? <a href="docSignup/">Signup as a doctor</a>
+            Are you a doctor? <a href="doc/signup/">Signup as a doctor</a>
           </p>
         </div>
       </div>

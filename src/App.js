@@ -12,6 +12,7 @@ import Main from "./pages/Main";
 import UserState from "./context/userState";
 import UserProfile from "./pages/UserProfile";
 import DocLogin from "./pages/DocLogin";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Home />} />
             <Route path="user/signup/" element={<SignUpUser />} />
             <Route path="doc/signup/" element={<SignUpDoctor />} />
             <Route path="doc/login/" element={<DocLogin />} />

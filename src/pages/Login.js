@@ -97,7 +97,7 @@ const Login = () => {
           </button>
         </div>
         <div className='u_signupFooter'>
-        <p>Not registered yet ? <a href="/usersignup/">Register here!</a></p>
+        <p>Not registered yet ? <a href="/user/signup/">Register here!</a></p>
         </div>
       </div>
     </div>

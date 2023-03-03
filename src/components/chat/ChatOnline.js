@@ -1,6 +1,6 @@
 import React from "react";
 
-const ChatOnline = () => {
+const ChatOnline = ({ name }) => {
   return (
     <div className="chatOnline">
       <div className="chatOnlineFriend">
@@ -12,7 +12,7 @@ const ChatOnline = () => {
           />
           <div className="chatOnlineBadge"></div>
         </div>
-        <span className="chatOnlineName">Hymn</span>
+        <span className="chatOnlineName">{name}</span>
       </div>
     </div>
   );

@@ -163,12 +163,12 @@ const Chat = () => {
 
       <div className="chatOnline">
         <div className="chatOnlineWrapper">
-          <ChatOnline />
-          <ChatOnline />
-          <ChatOnline />
-          <ChatOnline />
-          <ChatOnline />
-          <ChatOnline />
+          <ChatOnline name="Anonymous_288"/>
+          <ChatOnline name="Anonymous_430"/>
+          <ChatOnline name="Anonymous_528"/>
+          <ChatOnline name="Anonymous_698"/>
+          <ChatOnline name="Anonymous_728"/>
+          <ChatOnline name="Anonymous_850"/>
         </div>
       </div>
     </div>
