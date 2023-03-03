@@ -1,29 +1,46 @@
 import React from "react";
-import '../../css/SignUp.css'
+import "../../css/SignUp.css";
 
-const Registration = ({formData,setFormData}) => {
+const Registration = ({ formData, handleChange }) => {
   return (
     <div>
       <div className="inputbox">
-        <input type="text" name="name" id="" required autoComplete="off"
-        // value={FormData.name} onChange={(e)=>setFormData({...formData , name:e.target.value})} 
+        <input
+          type="text"
+          name="name"
+          required
+          autoComplete="off"
+          value={formData.name}
+          onChange={(e) => handleChange(e)}
         />
         <span>Name</span>
         <hr />
       </div>
       <div className="inputbox">
-        <input type="text" name="email" id="" required autoComplete="off" />
+        <input
+          type="text"
+          name="email"
+          required
+          autoComplete="off"
+          value={formData.email}
+          onChange={(e) => handleChange(e)}
+        />
         <span>Email id</span>
         <hr />
       </div>
       <div className="inputbox">
-        <input type="password" name="password" id="" required/>
+        <input
+          type="password"
+          name="password"
+          required
+          value={formData.password}
+          onChange={(e) => handleChange(e)}
+        />
         <span>Password</span>
         <hr />
       </div>
     </div>
   );
 };
-
 
 export default Registration;

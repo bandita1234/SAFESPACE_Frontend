@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Main from "./pages/Main";
 import UserState from "./context/userState";
 import UserProfile from "./pages/UserProfile";
+import DocLogin from "./pages/DocLogin";
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="user/signup/" element={<SignUpUser />} />
-            <Route path="docsignup/" element={<SignUpDoctor />} />
+            <Route path="doc/signup/" element={<SignUpDoctor />} />
+            <Route path="doc/login/" element={<DocLogin />} />
             <Route path="user/login/" element={<Login />} />
             <Route path="docProfile/" element={<DocProfile />} />
             <Route path="userProfile/" element={<UserProfile />} />

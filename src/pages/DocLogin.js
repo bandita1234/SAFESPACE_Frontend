@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "../css/SignUp.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const SignUpUser = () => {
+const DocLogin = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    username: "",
+    email: "",
     password: "",
     cpassword: "",
   });
-
-  const user = "Anonymous_";
-  const randomUser = Math.floor(100000 + Math.random() * 900000);
-
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem("doctoken")) {
+      //   console.log(localStorage.getItem("doctoken"));
       navigate("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,14 +21,14 @@ const SignUpUser = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const handleSubmit = async () => {
-    const url = `${process.env.REACT_APP_HOST}/user/signup`;
+    const url = `${process.env.REACT_APP_HOST}/doctor/login`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: form.username,
+        email: form.email,
         password: form.password,
       }),
     });
@@ -47,9 +43,10 @@ const SignUpUser = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        toastId: "dr-signup-success",
+        toastId: "login-success",
       });
-      navigate("/user/login");
+      localStorage.setItem("doctoken", json.token);
+      navigate("/");
     } else {
       toast.error(json.message, {
         position: "bottom-right",
@@ -59,57 +56,47 @@ const SignUpUser = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        toastId: "dr-signup-failure",
+        toastId: "login-failure",
       });
     }
   };
-
   return (
     <div className="signup_main">
       <div className="signup_container">
-        <div className="header">SIGNUP</div>
+        <div className="header">LOGIN</div>
         <div className="inputbox">
           <input
-            type="text"
-            name="username"
+            type="email"
+            name="email"
             onChange={(e) => handleChange(e)}
+            value={form.email}
             autoComplete="off"
-            onClick={() => {
-              setForm({ ...form, username: `${user}${randomUser}` });
-            }}
-            value={form.username}
           />
-          <span>Username</span>
+          <span>Email</span>
           <hr />
         </div>
         <div className="inputbox">
           <input
             type="password"
             name="password"
-            value={form.password}
             onChange={(e) => handleChange(e)}
+            value={form.password}
           />
           <span>Password</span>
           <hr />
         </div>
-        <div className="inputbox">
-          <input
-            type="password"
-            name="cpassword"
-            value={form.cpassword}
-            onChange={(e) => handleChange(e)}
-          />
-          <span>Confirm Password</span>
-          <hr />
-        </div>
         <div className="btn_div">
-          <button className="signup_btn" onClick={handleSubmit}>
+          <button
+            style={{ marginTop: "30px" }}
+            className="signup_btn"
+            onClick={handleSubmit}
+          >
             Submit
           </button>
         </div>
         <div className="u_signupFooter">
-          <p style={{ color: "#fff" }}>
-            Are you a doctor? <a href="docSignup/">Signup as a doctor</a>
+          <p>
+            Not registered yet ? <a href="/usersignup/">Register here!</a>
           </p>
         </div>
       </div>
@@ -117,4 +104,4 @@ const SignUpUser = () => {
   );
 };
 
-export default SignUpUser;
+export default DocLogin;

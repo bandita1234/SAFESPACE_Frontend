@@ -1,25 +1,46 @@
-import React from 'react'
+import React from "react";
 
-const JobInfo = () => {
+const JobInfo = ({ formData, handleChange }) => {
   return (
     <div>
       <div className="inputbox">
-        <input type="text" name="job_title" id="" required />
+        <input
+          type="text"
+          name="jobtitle"
+          id=""
+          required
+          value={formData.jobtitle}
+          onChange={(e) => handleChange(e)}
+        />
         <span>Job Title</span>
         <hr />
       </div>
       <div className="inputbox">
-        <input type="text" name="hospital_name" id="" required />
+        <input
+          type="text"
+          name="hospital"
+          id=""
+          required
+          value={formData.hospital}
+          onChange={(e) => handleChange(e)}
+        />
         <span>Hospital Name</span>
         <hr />
       </div>
       <div className="inputbox">
-        <input type="text" name="qualification" id="" required />
+        <input
+          type="text"
+          name="qualification"
+          id=""
+          required
+          value={formData.qualification}
+          onChange={(e) => handleChange(e)}
+        />
         <span>Qualification</span>
         <hr />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default JobInfo;
