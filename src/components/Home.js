@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../css/card.css";
-import { BiLike, BiCommentDetail } from "react-icons/bi";
+
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { MdVerified } from "react-icons/md";
 import { UserContext } from "../context/userState";
 import Navbar from "./Navbar";
+import PostCard from "./PostCard";
 
 const Home = () => {
   const userCtx = useContext(UserContext);
@@ -101,7 +102,10 @@ const Home = () => {
             </div>
             <div className="game_btn">
               <button>
-                <a href="https://partha6686.github.io/rock-paper-scissors/" target="_blank">
+                <a
+                  href="https://partha6686.github.io/rock-paper-scissors/"
+                  target="_blank"
+                >
                   Play Now
                 </a>
               </button>
@@ -120,8 +124,8 @@ const Home = () => {
                 />
               </div>
               <div>
-               { /*<h3>{userCtx.user ? userCtx.user.username : "Anonymous"}</h3>*/}
-               <h3>Anonymous_228</h3>
+                {/*<h3>{userCtx.user ? userCtx.user.username : "Anonymous"}</h3>*/}
+                <h3>Anonymous_228</h3>
               </div>
             </div>
 
@@ -144,32 +148,7 @@ const Home = () => {
           </div>
 
           {posts.map((m) => (
-            <div className="card" key={m._id}>
-              <div className="head_container">
-                <div className="card_img">
-                  <img
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-                    alt="img"
-                  />
-                </div>
-                <div>
-                  <h3>Anonymous_345</h3>
-                </div>
-              </div>
-              <hr />
-              <div className="card_desc">
-                <p>{m.description}</p>
-              </div>
-              <hr />
-              <div className="like_comm">
-                <div>
-                  <BiLike style={{ fontSize: "2em" }} />
-                </div>
-                <div>
-                  <BiCommentDetail style={{ fontSize: "2em" }} />
-                </div>
-              </div>
-            </div>
+            <PostCard m={m} key={m._id} />
           ))}
         </div>
 
