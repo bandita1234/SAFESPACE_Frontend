@@ -96,6 +96,30 @@ const Home = () => {
 
         {/* Middle*/}
         <div className="middle_div">
+        <div className="addpost">
+        <div className="head_container">
+            <div className="card_img">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="img"
+              />
+            </div>
+            <div>
+              <h3>name</h3>
+              <p>Pshychatrist</p>
+            </div>
+          </div>
+
+          <div className="postarea">
+          <div>
+          <textarea name="addpost" id="" cols="90" rows="10" placeholder="Create a new post!... "></textarea>
+          </div>
+          <div className="game_btn">
+          <button type="">Post</button>
+          </div>
+          </div>
+
+        </div>
         <div className="card">
           <div className="head_container">
             <div className="card_img">

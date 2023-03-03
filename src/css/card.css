@@ -152,6 +152,7 @@
     box-shadow: 0 0 10px;
     font-size: 14px;
     font-weight: 600;
+    color: #45f3ff;
 }
 
 /*Middle div*/
@@ -195,4 +196,13 @@
 }
 .like_comm div:hover{
     color: #45f3ff;
+}
+
+.addpost{
+  margin-top: 26px;
+  background-color: #1c1c1c;
+    box-shadow: 0 0 10px #8f8f8f;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-bottom: 80px;
 }
