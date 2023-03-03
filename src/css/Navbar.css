@@ -1,0 +1,47 @@
+.main_nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #58dee8b8;
+    height: 10vh;
+    padding: 0 40px;
+}
+.searchField,.right_nav{
+    display: flex;
+    flex: 1;
+}
+.searchField{
+    align-items: center;
+   
+}
+.right_nav{
+     gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+.profile_display img{
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+.searchField{
+    margin-top:8px;
+    align-items: center; 
+}
+.searchField input{
+    /* width: 200px; */
+    padding: 12px 0 8px 16px;
+    margin-right: 6px;
+    border-radius: 10px;
+}   
+.nav_btn button{
+    /* width: 100px; */
+    /* height: 30px; */
+    padding: 6px;
+    background: none;
+    border: 1px solid black;
+    box-shadow: 0 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
