@@ -3,7 +3,7 @@ import { UserContext } from "../context/userState";
 
 const Main = () => {
   const userCtx = useContext(UserContext);
-  console.log(userCtx.user);
+  // console.log(userCtx.user);
   useEffect(() => {
     userCtx.fetchUser();
   }, []);

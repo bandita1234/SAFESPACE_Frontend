@@ -1,6 +1,8 @@
 import React from "react";
+import TimeAgo from "timeago-react";
 
-const Message = ({ message, own }) => {
+const Message = ({ message, time, own }) => {
+  console.log(message);
   return (
     <div className={own ? "message own" : "message"}>
       <div className="messageTop">
@@ -11,7 +13,9 @@ const Message = ({ message, own }) => {
         />
         <p className="messageText">{message}</p>
       </div>
-      <div className="messageBottom">1 hour ago</div>
+      <div className="messageBottom">
+        <TimeAgo datetime={time} />
+      </div>
     </div>
   );
 };
